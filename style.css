@@ -1,3 +1,4 @@
+/* Reset e base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +17,9 @@ body {
   margin: auto;
   padding: 20px;
 }
-site-header {
+
+/* Header */
+.site-header {
   background-color: #1e1e1e;
   border-bottom: 1px solid #333;
   padding: 10px 0;
@@ -43,6 +46,7 @@ site-header {
 .menu a:hover {
   color: #fff;
 }
+
 .icons {
   display: flex;
   align-items: center;
@@ -63,14 +67,6 @@ site-header {
   color: #8b5cf6;
 }
 
-
-.icons button:hover,
-.icons a:hover {
-  color: #8b5cf6;
-}
-
-
-
 .logo {
   display: flex;
   align-items: center;
@@ -78,38 +74,51 @@ site-header {
 }
 
 .logo img {
-  width: 90px;         /* Ajuste essa porcentagem como quiser */
-  max-width: 100px;   /* Tamanho máximo para evitar que fique muito grande */
+  width: 90px;
+  max-width: 100px;
   height: auto;
   border-radius: 50%;
 }
 
-
-
-nav button {
-  background: none;
-  border: 2px solid #ffffff;
-  font-size: 1.2rem;
-  color: white;
-  margin-left: 15px;
-  cursor: pointer;
-  transition: color 0.3s ease;
+/* Loader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-nav button:hover {
-  color: #8b5cf6;
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Conteúdo */
 h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin: 30px 20px 20px;
 }
 
-/* Grade responsiva corrigida */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  padding: 0 20px 40px;
 }
 
 .card {
@@ -124,7 +133,6 @@ h2 {
   box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
 }
 
-/* Imagens quadradas */
 .card img {
   width: 100%;
   aspect-ratio: 1 / 1;
