@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Página de Mangás</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Ícones -->
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página de Mangás</title>
+  <link rel="stylesheet" href="teste.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="img/mangaviewers.png" alt="Logo Mangá Viewers" class="logo" />
+    <div class="loading-bar">
+      <div class="bar"></div>
+    </div>
+  </div> 
+
+  <!-- Tudo que será exibido após carregamento -->
+  <div id="main-content" style="display: none;">
     <header class="site-header">
       <div class="container header-inner">
         <div class="logo">
@@ -21,19 +31,11 @@
           <a href="#">Gêneros</a>
         </nav>
         <div class="icons">
-          <a href="" aria-label="Buscar"><i class="fas fa-search"></i></a>
-          <a href="" aria-label="Perfil"><i class="fas fa-user"></i><img src="img/ui_user_profile_person_icon_208878.svg" alt="">Entrar</a>
+          <a href="#" aria-label="Buscar"><i class="fas fa-search"></i></a>
+          <a href="img/ui_user_profile_person_icon_208878.svg" aria-label="Perfil"><i class="fas fa-user"></i> Entrar</a>
         </div>
       </div>
     </header>
-
-    <!-- Tela de carregamento -->
-    <div id="preloader">
-      <div class="logo">
-        <img src="" alt="Logo" />
-      </div>
-      <div class="loader"></div>
-    </div>
 
     <main>
       <h2>Mangás em Destaque</h2>
@@ -101,23 +103,22 @@
       </section>
     </main>
 
-    <!-- Conteúdo principal (só aparece após o carregamento) -->
-    <div id="main-content" style="display: none;"></div>
-
-    <script>
-      window.addEventListener("load", function () {
-        const preloader = document.getElementById("preloader");
-        const mainContent = document.getElementById("main-content");
-
-        setTimeout(() => {
-          preloader.style.display = "none";
-          mainContent.style.display = "block";
-        }, 5000);
-      });
-    </script>
-
     <footer>
       <p>&copy; 2025 Yushuke Mangás. Todos os direitos reservados.</p>
     </footer>
-  </body>
+  </div>
+
+  <!-- Script do preload -->
+  <script>
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const mainContent = document.getElementById("main-content");
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+        mainContent.style.display = "block";
+      }, 10000); // 10 segundos
+    });
+  </script>
+</body>
 </html>
