@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página de Mangás</title>
+    <link rel="stylesheet" href="teste.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Ícones -->
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <img src="img/mangaviewers.png" alt="Logo do site" />
+        </div>
+        <nav class="menu">
+          <a href="#">Mangás</a>
+          <a href="#">Listas</a>
+          <a href="#">Scans</a>
+          <a href="#">Gêneros</a>
+        </nav>
+        <div class="icons">
+          <a href="" aria-label="Buscar"><i class="fas fa-search"></i></a>
+          <a href="" aria-label="Perfil"><i class="fas fa-user"></i><img src="img/ui_user_profile_person_icon_208878.svg" alt="">Entrar</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tela de carregamento -->
+    <div id="preloader">
+      <div class="logo">
+        <img src="img/mangaviewers.png" alt="Logo" />
+      </div>
+      <div class="loader"></div>
+    </div>
+
+    <main>
+      <h2>Mangás em Destaque</h2>
+      <section class="grid">
+        <!-- Cards de mangás -->
+        <article class="card">
+          <img src="img/67f56131eb428.png" alt="Capa do mangá 1" />
+          <div class="info">
+            <h3>Mangá 1</h3>
+            <p>Um mangá de ação e aventura com personagens intensos e batalhas épicas.</p>
+            <div class="tags">
+              <span>Ação</span>
+              <span>Aventura</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/67eecac034889.png" alt="Capa do mangá 2" />
+          <div class="info">
+            <h3>Mangá 2</h3>
+            <p>Uma comédia romântica leve e divertida, perfeita para relaxar.</p>
+            <div class="tags">
+              <span>Comédia</span>
+              <span>Romance</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/67f7ef8924e0a.png" alt="Capa do mangá 3" />
+          <div class="info">
+            <h3>Mangá 3</h3>
+            <p>Drama intenso com reviravoltas surpreendentes e personagens complexos.</p>
+            <div class="tags">
+              <span>Drama</span>
+              <span>Suspense</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/67fc091255187.png" alt="Capa do mangá 4" />
+          <div class="info">
+            <h3>Mangá 4</h3>
+            <p>Fantasia sombria com magia, monstros e batalhas épicas.</p>
+            <div class="tags">
+              <span>Fantasia</span>
+              <span>Ação</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/67fc0954ec242.png" alt="Capa do mangá 5" />
+          <div class="info">
+            <h3>Mangá 5</h3>
+            <p>Ficção científica com tecnologia avançada e mistérios para desvendar.</p>
+            <div class="tags">
+              <span>Sci-Fi</span>
+              <span>Mistério</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Conteúdo principal (só aparece após o carregamento) -->
+    <div id="main-content" style="display: none;"></div>
+
+    <script>
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        const mainContent = document.getElementById("main-content");
+
+        setTimeout(() => {
+          preloader.style.display = "none";
+          mainContent.style.display = "block";
+        }, 10000); // Aumentado para 10 segundos
+      });
+    </script>
+
+    <footer>
+      <p>&copy; 2025 Yushuke Mangás. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
