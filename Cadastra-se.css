@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Reset básico */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Adiciona box-sizing para um controle de layout mais intuitivo */
+}
+
+/* Fundo do corpo */
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    /* Gradiente de roxo e preto para o fundo */
+    background: linear-gradient(-45deg, #8A2BE2, #000000); /* Roxo para Preto */
+    background-size: 400% 400%; /* Para animação de gradiente se desejar */
+    animation: gradientAnimation 15s ease infinite; /* Animação opcional para o fundo */
+}
+
+/* Animação opcional para o fundo */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Formulário principal */
+#form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; /* Fundo branco para o formulário */
+    border-radius: 10px;
+    padding: 60px;
+    width: min-content;
+    display: flex; /* Usando flexbox para alinhar itens */
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    color: #2b344b; /* Texto em tom de preto/cinza escuro */
+    animation: iniciar 1.6s ease-out;
+    pointer-events: all;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+/* Título */
+.title{
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 10%;
+    color: #333; /* Título em tom de preto */
+}
+
+/* Campo de entrada */
+.input{
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px solid #6f7e8a; /* Borda em tom de cinza escuro */
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    display: flex; /* Para alinhar ícone e input */
+    align-items: center;
+    background-color: #f8f8f8; /* Fundo levemente cinza para os inputs */
+}
+
+/* Ícone dentro do input */
+.input i{
+    font-size: 1.2em;
+    padding: 5px;
+    /* Gradiente roxo para o ícone */
+    background: -webkit-linear-gradient(-45deg,#8A2BE2, #4B0082); /* Roxo mais claro para roxo mais escuro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Campo de texto do input */
+.input input{
+    width: 80%;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(10%);
+    color: #2b344b; /* Texto do input em tom de preto/cinza escuro */
+    font-size: 11pt;
+    background: transparent; /* Fundo transparente para o input */
+}
+
+/* Contêiner do botão principal */
+#btn{
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+/* Botão principal */
+#btn button{
+    font-family: 'Poppins', sans-serif;
+    /* Gradiente roxo e preto para o botão principal */
+    background: linear-gradient(-45deg, #8A2BE2, #000000); /* Roxo para Preto */
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 1.2em;
+    color: #fff; /* Texto branco */
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito hover do botão principal */
+#btn button:hover{
+    /* Gradiente roxo mais escuro e preto mais claro no hover */
+    background: linear-gradient(-45deg, #6A0DAD, #333333); /* Roxo mais escuro para cinza escuro */
+}
+
+/* Animação de início do formulário */
+@keyframes iniciar{
+    0%{
+        top: 20%;
+        opacity: 0;
+        pointer-events: none;
+    }
+    100%{
+        top: 50%;
+        opacity: 100%;
+        pointer-events: all;
+    }
+}
+
+/* Botão "Entrar" (específico, agora com gradiente roxo e preto) */
+.entrar {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    /* Gradiente de roxo e preto */
+    background: linear-gradient(-45deg, #8A2BE2, #000000); /* Roxo para Preto */
+    color: #fff; /* Texto branco */
+    transition: background 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito hover do botão "Entrar" */
+.entrar:hover {
+    /* Tonalidade ligeiramente diferente no hover */
+    background: linear-gradient(-45deg, #9932CC, #333333); /* Roxo mais escuro para cinza escuro */
+}
+
+
+
+
+
+back-button {
+    position: fixed;
+    top: 20px;    /* Alterado de bottom para top */
+    left: 20px;   /* Adicionado para posicionar no canto esquerdo */
+    background: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+  }
+  .back-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  .back-button svg {
+    width: 24px;
+    height: 24px;
+  }
