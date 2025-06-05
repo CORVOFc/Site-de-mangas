@@ -25,6 +25,9 @@ body {
   background-color:#020202;
   border-bottom: 1px solid #000000;
   padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-inner {
@@ -71,21 +74,6 @@ body {
   color: #8b5cf6;
 }
 
-/* Estilo para botões de navegação, se houver */
-nav button {
-  background: none;
-  border: 2px solid #ffffff;
-  font-size: 1.2rem;
-  color: white;
-  margin-left: 15px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-nav button:hover {
-  color: #8b5cf6;
-}
-
 /* Logo (cabeçalho) */
 .logo {
   display: flex;
@@ -106,6 +94,7 @@ h2 {
   margin-bottom: 20px;
   text-align: center;
   margin-top: 40px;
+  color: #ffffff;
 }
 
 /* Grid de cards responsiva */
@@ -116,11 +105,20 @@ h2 {
   padding: 0 20px;
 }
 
+/* Card styles */
 .card {
   background-color: #2a2a2a;
-  padding: 15px;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
 }
 
 .card:hover {
@@ -128,27 +126,35 @@ h2 {
   box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
 }
 
-/* Imagens dos cards (quadradas) */
+/* Imagens dos cards */
 .card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.card .info {
+  padding: 15px;
 }
 
 .card h3 {
-  margin: 10px 0 5px;
+  margin: 0 0 10px;
   font-size: 1.2rem;
+  color: #ffffff;
 }
 
 .card p {
   font-size: 0.875rem;
   color: #ccc;
+  margin-bottom: 10px;
 }
 
 /* Tags dos cards */
 .tags {
-  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .tags span {
@@ -156,7 +162,6 @@ h2 {
   background-color: #8b5cf6;
   padding: 4px 8px;
   font-size: 0.75rem;
-  margin-right: 5px;
   border-radius: 5px;
 }
 
@@ -190,7 +195,7 @@ footer {
   text-align: center;
 }
 
-/* --- Preloader Styles (COM BARRA DE PROGRESSO) --- */
+/* Preloader Styles */
 #preloader {
   position: fixed;
   top: 0;
@@ -199,103 +204,100 @@ footer {
   height: 100%;
   background-color: #1e1e1e;
   display: flex;
-  flex-direction: column; /* Para empilhar o logo e a barra */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.5s ease; /* Para uma transição suave ao desaparecer */
+  transition: opacity 0.5s ease;
 }
 
-/* Estilo para o logo dentro do preloader */
 .logo-preloader img {
-  width: 150px; /* Tamanho maior para o logo no preloader */
+  width: 150px;
   height: auto;
   border-radius: 50%;
-  margin-bottom: 30px; /* Espaço entre o logo e a barra */
+  margin-bottom: 30px;
 }
 
 .progress-bar-container {
-  width: 80%; /* Largura total da barra */
-  max-width: 400px; /* Largura máxima para evitar que fique muito grande */
-  height: 10px; /* Altura da barra */
-  background-color: #f3f3f3; /* Cor de fundo da trilha da barra */
+  width: 80%;
+  max-width: 400px;
+  height: 10px;
+  background-color: #f3f3f3;
   border-radius: 5px;
-  overflow: hidden; /* Garante que a barra interna não transborde */
+  overflow: hidden;
 }
 
 .progress-bar {
-  width: 0%; /* Começa com 0% de largura */
-  height: 100%; /* Ocupa toda a altura do contêiner */
-  background-color: #8b5cf6; /* Cor da barra de progresso */
+  width: 0%;
+  height: 100%;
+  background-color: #8b5cf6;
   border-radius: 5px;
-  animation: fillProgressBar 2s linear infinite; /* Animação para preencher */
+  animation: fillProgressBar 2s linear infinite;
 }
 
-/* Keyframes para a animação de preenchimento da barra */
 @keyframes fillProgressBar {
   0% { width: 0%; }
   100% { width: 100%; }
 }
 
-/* Oculta o conteúdo principal por padrão */
 #main-content {
   display: none;
 }
 
-/* Media Queries para responsividade */
+/* Media Queries */
 @media (max-width: 768px) {
   .header-inner {
-      flex-direction: column;
-      gap: 15px;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .menu {
-      flex-wrap: wrap;
-      justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .icons {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   .grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 
   .container2 {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .imagem {
-      margin-right: 0;
-      margin-bottom: 15px;
-  }
-
-  .progress-bar-container {
-      width: 90%; /* Aumenta a largura em telas menores */
+    margin-right: 0;
+    margin-bottom: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .logo img {
-      width: 70px;
+    width: 70px;
   }
 
   h2 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 
   .card h3 {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .card p, .tags span {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 
   .logo-preloader img {
-      width: 100px; /* Ajusta o tamanho do logo no preloader para telas menores */
-      margin-bottom: 20px;
+    width: 100px;
+    margin-bottom: 20px;
   }
 }
