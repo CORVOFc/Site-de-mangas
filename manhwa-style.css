@@ -33,7 +33,7 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: #facc15;
+    background: rgb(62, 4, 101);
   }
   
   ::-webkit-scrollbar-thumb {
@@ -94,6 +94,7 @@
   .cover-wrapper {
     position: relative;
     width: 180px;
+    height: 260px;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.7), 0 4px 6px -2px rgba(0,0,0,0.5);
     overflow: hidden;
@@ -407,3 +408,45 @@
     height: 20px;
     object-fit: contain;
   }
+
+
+
+
+
+
+
+
+
+/* ====================== */
+/*   BOTÃO VOLTAR (DIREITA) */
+/* ====================== */
+.back-button {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Alterado de left para right */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background: rgba(138, 43, 226, 0.7); /* Roxo com transparência */
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+}
+
+.back-button svg {
+    width: 24px;
+    height: 24px;
+    color: white; /* Alterado para branco */
+}
